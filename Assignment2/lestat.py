@@ -1,3 +1,5 @@
+#All the work herein is solely mine
+
 #Assigning variables to types
 Ap, Bp, Op, ABp = "A+", "B+", "O+", "AB+"
 An, Bn, On, ABn = "A-", "B-", "O-", "AB-"

@@ -1,4 +1,7 @@
+#All the work herein is solely mine
+
 import math
+
 # 1 Finish this function
 # Calculates speed in mph from distance (miles) and time (hours)
 # Input Parameters: distance d (miles), time t (hours)

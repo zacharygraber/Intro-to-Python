@@ -1,6 +1,8 @@
+#All the work herein is solely mine
+
 #Immediately, I notice that married people pay more tax
 #Also, these brackets are absolute, and are not realistic.
-#In the real world, you would pay 10% on everything up to $9700, then 12% up to $39475, etc
+#In the real world, you would pay 10% on everything up to $9700, then 12% from $9700 up to $39475, etc
 
 def unmarriedTax(income):
     if income <= 9700:
