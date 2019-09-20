@@ -27,12 +27,15 @@ def p(x):
 #7
 def W(P_i,P_f):
 #TO DO: IMPLEMENT FUNCTION
+    pass
 #8
 def depreciate(c,s,life):
 #TO DO: IMPLEMENT FUNCTION
+    pass
 #9
 def L(k,V,A,C):
 #TO DO: IMPLEMENT FUNCTION
+    pass
 if __name__=="__main__":
     print(y(1000,.02,10))
     print(N(500,100,4))
