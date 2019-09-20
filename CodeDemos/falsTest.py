@@ -13,3 +13,5 @@ print("Testing neverGonna")
 
 rick1 = ["give you up", "let you down", "run around and desert you", "make you cry", "say goodbye", "tell a lie and hurt you"]
 neverGonna(rick1)
+neverGonna("give you up")
+print(neverGonna(["run"]))
