@@ -2,6 +2,9 @@ import math
 
 #1 
 def y(d,r,t):
+    """
+    returns the yield of a deposit with principle (d), compound interest rate (r), and time (t)
+    """
     return d * math.exp(r * t)
 
 #2
