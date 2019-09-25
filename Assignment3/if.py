@@ -38,4 +38,18 @@ if not ((2 > z) or x) and not (2 == 1) and not (y and not x):
 ###################
 
 #5#################
+def f(x):
+    if x == 4:
+        return 100
+    elif x == 3:
+        return 10
+    elif x == 2:
+        return 1000
+    else:
+        return 100000
+
+print(f(4))
+print(f(3))
+print(f(2))
+print(f(1))
 ###################
