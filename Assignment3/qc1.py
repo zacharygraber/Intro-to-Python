@@ -1,3 +1,4 @@
+#all of the work herein is solely mine
 from math import sqrt
 import numpy as np
 import matplotlib.pyplot as plt

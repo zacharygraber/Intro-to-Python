@@ -1,3 +1,4 @@
+#all of the work herein is solely mine
 import math
 
 #1 
