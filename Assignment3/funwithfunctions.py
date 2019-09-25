@@ -29,16 +29,16 @@ def p(x):
 
 #7
 def W(P_i,P_f):
-#TO DO: IMPLEMENT FUNCTION
-    pass
+    return 8.314 * 300 * math.log((P_i / P_f))
+
 #8
 def depreciate(c,s,life):
-#TO DO: IMPLEMENT FUNCTION
-    pass
+    return (c - s) / life
+
 #9
 def L(k,V,A,C):
-#TO DO: IMPLEMENT FUNCTION
-    pass
+    return k * (V **2) * A * C
+
 if __name__=="__main__":
     print(y(1000,.02,10))
     print(N(500,100,4))
