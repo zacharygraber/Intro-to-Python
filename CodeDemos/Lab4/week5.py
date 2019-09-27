@@ -56,3 +56,10 @@ def operationList(opsList, op):
         index1 += 1
         resultingList += [currResult]
     return resultingList
+
+def evenCount2(dictionary):
+    count = 0
+    for key in dictionary: #for key in dictionary.keys()
+        if key % 2 ==0:
+            count += 1
+    return count
