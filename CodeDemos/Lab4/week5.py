@@ -24,3 +24,35 @@ def occurencesWhileList(lst, var):
             item += 1
         lst = lst[1:] #remove the first item in the list
     return item
+
+def operationList(opsList, op):
+    """
+    Given a list of lists, where each inner list has a size > 0
+
+    Using the operation provide:
+    -subtract: s
+    -multiply: m
+    -add: a
+
+    Apply that to the whole list
+    """
+    resultingList = []
+    index1 = 0
+    while index1 < len(opsList):
+        currList = opsList[index1]
+        if op == "m":
+            currResult = 1
+        else:
+            currResult = 0
+        index2 = 0
+        while index2 < len(currList):
+            if op == "m":
+                currResult *= currList[index2]
+            elif op == "a":
+                currResult += currList[index2]
+            else:
+                currResult -= currList[index2]
+            index2 += 1
+        index1 += 1
+        resultingList += [currResult]
+    return resultingList
