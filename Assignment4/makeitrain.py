@@ -19,3 +19,6 @@ def dollars(x: int or float):
 print(dollars(2.24))
 print(dollars(1.19))
 print(dollars(4.16))
+
+if __name__ == "__main__":
+    pass
