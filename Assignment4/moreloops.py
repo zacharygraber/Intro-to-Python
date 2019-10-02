@@ -1,3 +1,5 @@
+#All of the work herein is solely mine
+
 # Input Parameter: a list of, possibly empty, numbers x
 # Returns: the max number in list x (does not have to be unique)
 def maxFor(xlst):

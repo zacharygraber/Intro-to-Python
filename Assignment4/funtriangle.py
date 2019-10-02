@@ -1,3 +1,5 @@
+#All of the work herein is solely mine
+
 #1st Triangle#################################
 for i in range(19):
     print("*" * (-1 * abs((i+1) - 10) + 10))

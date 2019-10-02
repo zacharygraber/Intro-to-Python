@@ -1,3 +1,5 @@
+#All of the work herein is solely mine
+
 def palindrome(x: str):
     """
     Input a sentence cleaned of punctuation, spacing, and capitalization

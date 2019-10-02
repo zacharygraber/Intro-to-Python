@@ -1,3 +1,5 @@
+#All of the work herein is solely mine
+
 def f(x,y,z):
     return 11*x*y + 14*y*z + 15*x*z
 

@@ -1,3 +1,4 @@
+#All of the work herein is solely mine
 def dollars(x: int or float):
     """
     Takes in a dollar amount

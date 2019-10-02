@@ -1,3 +1,5 @@
+#All of the work herein is solely mine
+
 #blood bank type:units
 bank = {"A+":5, "A-":6, "O+":4, "O-":2, "B+":5, "B-":6, "AB+":7, "AB-":8}
 #blood donor:(recipient1, ..., recipientk)
