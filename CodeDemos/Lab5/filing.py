@@ -25,3 +25,12 @@ print("-"*30)
 print(contents)
 print("*EOF*")
 someFile.close()
+
+print()
+print("\t\t WRITING \t\t")
+stuff = ["a","b","c","d","e","f"]
+
+fileToWrite = open("CodeDemos/Lab5/wrong.txt", "w")
+for s in stuff:
+    fileToWrite.write(s + "\n")
+fileToWrite.close()
