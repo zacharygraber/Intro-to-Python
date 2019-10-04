@@ -6,3 +6,17 @@
 # - After writing to the file, read from the same file to get a total score
 # - Append the total score to the file
 # - Read from said file again and get the total score.
+import random
+def randomNumbers(num: "int <= 100"):
+    numberStr = str()
+    for i in range(num):
+        thisNum = random.randint(1,100)
+        while str(thisNum) in numberStr:
+            thisNum = random.randint(1,100)
+        numberStr += str(thisNum) + " "
+    return numberStr
+
+
+workingFile = open("Labs/Lab5/storage.txt", "w")
+workingFile.write(randomNumbers(50))
+workingFile.close()
