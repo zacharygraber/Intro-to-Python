@@ -51,3 +51,15 @@ template = "|{0}| |{1}|"
 print(template.format(v1, v1.strip()))
 print(template.format(v2, v2.strip()))
 print(template.format(v3, v3.strip("thaeiou.")))
+
+print("~"*30)
+print("\t\t SPLIT \t\t")
+t1 = "1,2,3"
+t2 = "1cat2cat3cat"
+t3 = "a123,b123,3"
+t4 = "1 2 3"
+
+print(template.format(t1, t1.split(",")))
+print(template.format(t2, t2.split("cat")))
+print(template.format(t3, t3.split("123,")))
+print(template.format(t4, t4.split()))
