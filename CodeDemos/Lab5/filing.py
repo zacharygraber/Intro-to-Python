@@ -14,3 +14,14 @@ someFile.close()
 
 for i in contents:
     print(i)
+
+print("~"*30)
+print()
+print("\t\t READING \t\t")
+someFile = open("CodeDemos/Lab5/blank.txt")
+contents = someFile.readlines()
+print("Start of File")
+print("-"*30)
+print(contents)
+print("*EOF*")
+someFile.close()
