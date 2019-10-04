@@ -34,4 +34,14 @@ workingFile.close()
 workingFile = open("Labs/Lab5/storage.txt", "r")
 totalScore = sumScore(workingFile.read())
 workingFile.close()
-print(totalScore)
+
+workingFile = open("Labs/Lab5/storage.txt", "a")
+workingFile.write("\n"+str(totalScore))
+workingFile.close()
+
+workingFile = open("Labs/Lab5/storage.txt", "r")
+finalScore = workingFile.readline()
+finalScore = workingFile.readline()
+workingFile.close()
+
+print(str(finalScore))
