@@ -34,3 +34,20 @@ fileToWrite = open("CodeDemos/Lab5/wrong.txt", "w")
 for s in stuff:
     fileToWrite.write(s + "\n")
 fileToWrite.close()
+
+fileToWrite = open("CodeDemos/Lab5/wrong.txt", "a")
+for s in stuff:
+    fileToWrite.write("more\n")
+fileToWrite.close()
+
+print('~'*30)
+print("\t\t STRINGS \t\t")
+v1 = "l o s t "
+v2 = " carrot"
+v3 = "the quick brown fox jumped quickly over the lazy turtle."
+
+template = "|{0}| |{1}|"
+
+print(template.format(v1, v1.strip()))
+print(template.format(v2, v2.strip()))
+print(template.format(v3, v3.strip("thaeiou.")))
