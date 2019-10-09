@@ -1,3 +1,5 @@
+#all of the work herein is solely mine
+
 import math
 def makeProbability(xlst):
     """
@@ -27,11 +29,12 @@ def entropy(xlst):
         return -1 * currentSum
     return 0.0
 
-s1 = ["a","b","a","b","a","b","b","b"]
-s2 = [(1),(2),(3),(4)]
-s3 = [1]
-s4 = [1,2]
-xlst = [s1,s2,s3,s4]
-for i in xlst:
-    print(makeProbability(i))
-    print(entropy(makeProbability(i)))
+if __name__ == "__main__":
+    s1 = ["a","b","a","b","a","b","b","b"]
+    s2 = [(1),(2),(3),(4)]
+    s3 = [1]
+    s4 = [1,2]
+    xlst = [s1,s2,s3,s4]
+    for i in xlst:
+        print(makeProbability(i))
+        print(entropy(makeProbability(i)))
