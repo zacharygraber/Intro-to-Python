@@ -1,3 +1,4 @@
+import math
 #all of the work herein is solely that of me, Zachary E. Graber
 
 #s(n), as tested using an unbounded incrementing loop, can
@@ -67,10 +68,30 @@ def d(n):
 def d1(n):
     return (3**(n+1)-1) / 2
 
+def c18(n,k):
+    if k == 0 or k == n:
+        return 1
+    else:
+        return c18(n-1,k) + c18(n-1,k-1)
+
+#FOR TESTING#############################################################
+def c17(n,m):
+    return math.factorial(n) / (math.factorial(n-m) * math.factorial(m))
+
+def c19(n,k):
+    numerator = n
+    for i in range(1,k):
+        numerator *= (n-i)
+    return numerator / math.factorial(k)
+#########################################################################
+
 def B(n):
     if n == 0:
         return 1
-    
+    else:
+        def 
+        return (-1 * sumNot) / (1 + n)
+        
 
 if __name__ == "__main__":
     # for i in range(1,10):
@@ -93,3 +114,6 @@ if __name__ == "__main__":
     # while True:
     #     print(i,s(i))
     #     i += 1
+
+    print(B(1))
+    print(c17(2,0))
