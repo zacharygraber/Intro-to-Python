@@ -89,31 +89,34 @@ def B(n):
     if n == 0:
         return 1
     else:
-        def 
-        return (-1 * sumNot) / (1 + n)
-        
+        def sigma(n,k,stopVal):
+            if k > stopVal:
+                return 0
+            else:
+                return (c18(n+1,k) * B(k)) + sigma(n,k+1,stopVal)
+        return -1 * sigma(n,0,n-1) / (1 + n)
 
 if __name__ == "__main__":
-    # for i in range(1,10):
-    #     print("~"*40)
-    #     print(f"s({i}): ",s(i))
-    #     print(f"s1({i}): ",int(s1(i)))
-    #     print()
-    #     print(f"p({i}): ",p(i))
-    #     print(f"p1({i}): ",p1(i))
-    #     print()
-    #     print(f"b({i}): ",b(i))
-    #     print()
-    #     print(f"c({i}): ",c(i))
-    #     print()
-    #     print(f"d({i}): ",d(i))
-    #     print(f"d1({i}): ",int(d1(i)))
+    for i in range(1,10):
+        print("~"*40)
+        print(f"s({i}): ",s(i))
+        print(f"s1({i}): ",int(s1(i)))
+        print()
+        print(f"p({i}): ",p(i))
+        print(f"p1({i}): ",p1(i))
+        print()
+        print(f"b({i}): ",b(i))
+        print()
+        print(f"c({i}): ",c(i))
+        print()
+        print(f"d({i}): ",d(i))
+        print(f"d1({i}): ",int(d1(i)))
+        print()
+        print(f"c18({i},{i-1}): ",c18(i, i-1))
+        print(f"B({i}): ",B(i))
 
     #TESTING RECURSION DEPTH
     # i = 1
     # while True:
     #     print(i,s(i))
     #     i += 1
-
-    print(B(1))
-    print(c17(2,0))
