@@ -29,6 +29,21 @@ def onlyStrings(listOfKeys):
     """
     return {k:0 for k in listOfKeys if type(k) == str}
 
+############LIST COMPREHENSION
+def matrix(rows, columns, defaultValue):
+    """
+    Create a matrix with that number of rows and columns
+
+    Default value is value for each spot
+    """
+    return [[defaultValue for c in range(columns)] for r in range(rows)]
+
+def evens(maximum):
+    """
+    Create a list of evens from 0 to max number (exclusive)
+    """
+    return [i for i in range(maximum) if i % 2 == 0]
+
 if __name__ == "__main__":
     ##########GENERATOR
     g = randomValues(10,10)
@@ -41,3 +56,8 @@ if __name__ == "__main__":
     print("Dictionary Comprehension:",dictionary2(temp))
     values = ["1",1,"2",2,3,"3"]
     print("Dictionary Comprehension:",onlyStrings(values))
+    ##########List Comprehension
+    print()
+    print("List Comprehension:",matrix(4,5,"a"))
+    print("List Comprehension:",matrix(5,1,0))
+    print("List Comprehension:",evens(10))
