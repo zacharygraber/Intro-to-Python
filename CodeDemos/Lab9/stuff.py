@@ -44,6 +44,23 @@ def evens(maximum):
     """
     return [i for i in range(maximum) if i % 2 == 0]
 
+############MEMOIZATION
+memo = {}
+def combinations(n,k):
+    if n == k:
+        return 1
+    elif k == 0:
+        return 1
+    else:
+        if (n,k) in memo: #if the problem has already been solved
+            print("MEMORY: n= {0}, k= {1}".format(n,k))
+            return memo[(n,k)]
+        else:
+            p1 = combinations(n - 1, k)
+            p2 = combinations(n - 1, k - 1)
+            memo[(n,k)] = p1 + p2
+            return memo[(n,k)]
+
 if __name__ == "__main__":
     ##########GENERATOR
     g = randomValues(10,10)
@@ -61,3 +78,7 @@ if __name__ == "__main__":
     print("List Comprehension:",matrix(4,5,"a"))
     print("List Comprehension:",matrix(5,1,0))
     print("List Comprehension:",evens(10))
+    #########MEMOIZATION
+    print()
+    print("Memoization:",combinations(6,3))
+    # print("Memoization:",combinations(100,50))
