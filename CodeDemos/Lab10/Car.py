@@ -34,7 +34,14 @@ class Car:
     def brake(self):
         self.speed = 0
     
-    def runFor(self, )
+    def runFor(self, time):
+        self.mileage += (time * self.speed)
+    
+    def isStopped(self):
+        return not self.speed
+    
+    def getMileage(self):
+        return self.mileage
 
 zachsCar = Car("VW", "EOS", 2006)
 zachsCar.showCar()
