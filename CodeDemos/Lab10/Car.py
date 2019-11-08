@@ -5,25 +5,44 @@ class Car:
         self.make = make
         self.model = model
         self.year = year
+        self.bluetoothOn = False
+        self.mileage = 0
     
     @staticmethod
     def setRecall(b):
         Car.recall = b
 
     def showCar(self):
-        print("Do you like, may car ~")
-        print(self.make + " " + self.model + " " + str(self.year))
+        print("Do you like, my car ~")
+        print(self)
     
-    # def __str__(self):
-    #     return self.make + " " + self.model + " " + str(self.year)
+    def getName(self):
+        return self.make + " " + self.model
+
+    def startCar(self):
+        self.speed = 0
+    
+    def __str__(self):
+        return self.make + " " + self.model + " " + str(self.year)
+    
+    def setBluetoothOn(self, boolean):
+        self.bluetoothOn = boolean
+    
+    def accelerate(self, speed):
+        self.speed += speed
+    
+    def brake(self):
+        self.speed = 0
+    
+    def runFor(self, )
 
 zachsCar = Car("VW", "EOS", 2006)
 zachsCar.showCar()
 
 secondCar = Car("VW", "EOS", 2006)
-# print(zachsCar)
-# print(secondCar)
-# print(zachsCar == secondCar)
+print(zachsCar)
+print(secondCar)
+print(zachsCar == secondCar)
 
 # print(zachsCar.recall)
 # print(secondCar.recall)
