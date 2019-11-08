@@ -6,8 +6,9 @@ class Car:
         self.model = model
         self.year = year
     
-    def setRecall(self, b):
-        recall = b
+    @staticmethod
+    def setRecall(b):
+        Car.recall = b
 
     def showCar(self):
         print("Do you like, may car ~")
@@ -20,6 +21,21 @@ zachsCar = Car("VW", "EOS", 2006)
 zachsCar.showCar()
 
 secondCar = Car("VW", "EOS", 2006)
-print(zachsCar)
-print(secondCar)
-print(zachsCar == secondCar)
+# print(zachsCar)
+# print(secondCar)
+# print(zachsCar == secondCar)
+
+# print(zachsCar.recall)
+# print(secondCar.recall)
+# print(id(zachsCar.recall) == id(secondCar.recall))
+
+# zachsCar.recall = True
+# print(zachsCar.recall)
+# print(secondCar.recall)
+
+# Car.recall = True
+# print(zachsCar.recall)
+# print(secondCar.recall)
+
+Car.setRecall(True)
+print(zachsCar.recall)
