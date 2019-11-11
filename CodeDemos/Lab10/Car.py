@@ -43,25 +43,58 @@ class Car:
     def getMileage(self):
         return self.mileage
 
-zachsCar = Car("VW", "EOS", 2006)
-zachsCar.showCar()
+# zachsCar = Car("VW", "EOS", 2006)
+# zachsCar.showCar()
 
-secondCar = Car("VW", "EOS", 2006)
-print(zachsCar)
-print(secondCar)
-print(zachsCar == secondCar)
+# secondCar = Car("VW", "EOS", 2006)
+# print(zachsCar)
+# print(secondCar)
+# print(zachsCar == secondCar)
 
+# # print(zachsCar.recall)
+# # print(secondCar.recall)
+# # print(id(zachsCar.recall) == id(secondCar.recall))
+
+# # zachsCar.recall = True
+# # print(zachsCar.recall)
+# # print(secondCar.recall)
+
+# # Car.recall = True
+# # print(zachsCar.recall)
+# # print(secondCar.recall)
+
+# Car.setRecall(True)
 # print(zachsCar.recall)
-# print(secondCar.recall)
-# print(id(zachsCar.recall) == id(secondCar.recall))
 
-# zachsCar.recall = True
-# print(zachsCar.recall)
-# print(secondCar.recall)
+myCar = Car("Chevy", "Malibu", 2003)
+print("\nTESTING BLUETOOTH \n" + "~"*50)
+print(myCar.bluetoothOn)
+myCar.setBluetoothOn(True)
+print(myCar.bluetoothOn)
 
-# Car.recall = True
-# print(zachsCar.recall)
-# print(secondCar.recall)
+print("\nTESTING ACCELERATE \n" + "~"*50)
+myCar.startCar()
+print(myCar.speed)
+myCar.accelerate(30)
+print(myCar.speed)
+myCar.accelerate(5)
+print(myCar.speed)
 
-Car.setRecall(True)
-print(zachsCar.recall)
+print("\nTESTING BRAKES \n" + "~"*50)
+myCar.brake()
+print(myCar.speed)
+
+print("\nTESTING RUNFOR \n" + "~"*50)
+print(myCar.mileage)
+myCar.runFor(4)
+print(myCar.mileage)
+myCar.accelerate(60)
+myCar.runFor(10)
+print(myCar.mileage)
+
+print("\nTESTING ISSTOPPED \n" + "~"*50)
+print(myCar.isStopped())
+myCar.brake()
+print(myCar.isStopped())
+
+print("\nTESTING BLUETOOTH \n" + "~"*50)
