@@ -1,3 +1,12 @@
+#At any given point in time, the chance of taking a step in each direction is essentially
+#25 percent, meaning that the 'person' is equally as likely to step back toward the starting
+#point, as he is to step away from it, meaning that little progress is ever made.
+#What results from this is usually movement that ends with little displacement, since equal
+#amounts of progress and setback occur.
+
+#As such, one must surpass a large number (about 1,000) of steps before he or she ends up
+#even 30 steps away from the center, measured diagonally.
+
 import numpy as np
 import matplotlib.pyplot as plt
 import random as rn
@@ -9,8 +18,18 @@ import random as rn
 #return: none
 def step(x,y,i):
     direction = rn.randint(1,4)
-	# TODO: implement this function
-        
+    if direction == 1:
+        x[i] = x[i-1] + 1
+        y[i] = y[i-1]
+    elif direction == 2:
+        x[i] = x[i-1] - 1
+        y[i] = y[i-1]
+    elif direction == 3:
+        x[i] = x[i-1]
+        y[i] = y[i-1] + 1
+    else:
+        x[i] = x[i-1]
+        y[i] = y[i-1] - 1
 
 def graphit(x,y,n):
     plt.title("Random {0} Walk\nLast Location {1},{2}".format(n,int(x[n-1]),int(y[n-1])) )
