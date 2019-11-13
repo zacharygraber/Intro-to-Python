@@ -24,6 +24,8 @@ class MyComplexNumber:
     
     #extends the '+' operator to add two complex numbers
     #what's the different between __add__(self,ix) and add(self,ix)?
+    ##### __add__ is the magic method for "+", meaning that it will be automatically applied if two MyComplexNumber objects are added
+    ##### add() is a method that would have to be called with objectName.add()
     def __add__(self,ix):
         real_part = self.get_real() + ix.get_real()
         imag_part = self.get_imag() + ix.get_imag()
@@ -34,15 +36,23 @@ class MyComplexNumber:
     #parameters: MyComplexNumber self, MyComplexNumber ix to subtract from the MyComplexNumber self
     #return: a new MyComplexNumber containing the result
     def __sub__(self,ix):
-        # TODO: implement this function
-        pass
+        real_part = self.get_real() - ix.get_real()
+        imag_part = self.get_imag() - ix.get_imag()
+        iy = MyComplexNumber(real_part, imag_part)
+        return iy
 
     #extends the '/' operator to divide two complex numbers
     #parameters: MyComplexNumber self, MyComplexNumber ix to divide into the MyComplexNumber self
     #return: a new MyComplexNumber containing the result
     def __truediv__(self,other):
-        # TODO: implement this function
-        pass
+        a = self.get_real()
+        b = self.get_imag()
+        c = other.get_real()
+        d = other.get_imag()
+        e = (a*c + b*d)/(c**2 + d**2)
+        f = (b*c - a*d)/(c**2 + d**2)
+        new = MyComplexNumber(e, f)
+        return new
 
     def __mul__(self,other):
         real_part = self.get_real()*other.get_real() - self.get_imag()*other.get_imag()
@@ -54,15 +64,15 @@ class MyComplexNumber:
     #parameters: MyComplexNumber self
     #return: the value of the modulus
     def modulus(self):
-        # TODO: implement this function
-        pass
+        return math.sqrt((self.get_real() ** 2) + (self.get_imag() ** 2))
 
     #converts the self MyComplexNumber to polar representation
     #parameters: MyComplexNumber self
     #return: a tuple (rho, theta) as defined in the text, but where theta is in degrees not radians
     def polar(self):
-        # TODO: implement this function
-        pass
+        rho = self.modulus()
+        theta = (math.atan(self.get_imag() / self.get_real())) * (180 / math.pi)
+        return (rho, theta)
 
 #TEST CASES
 if __name__ == "__main__":
