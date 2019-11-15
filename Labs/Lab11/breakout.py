@@ -42,36 +42,80 @@ class Ball:
         self.loc[1] += yoffset
 
 cursor = Bar([212.5,400,75,3])
-bricks = {i:Brick([random.randint(0,255) for i in range(3)], [i*50,0,48,48]) for i in range(0,10)}
+# bricks = {i:Brick([random.randint(0,255) for i in range(3)], [i*(size[0]/10),30,49,49]) for i in range(0,10)}
+bricks = {}
+for i in range(10):
+    bricks[i] = Brick([random.randint(0,255) for i in range(3)], [i*(size[0]/10),30,49,49])
+# testBrick = Brick((255,255,255),[50,50,50,50])
+# bricks = {0:testBrick}
 ball = Ball([250,250,5,5])
 
 if __name__ == "__main__":
-    started = False
+    def gameLoop():
+        started = False
+        while True:
+            pygame.time.wait(17)
+
+            for event in pygame.event.get(): 
+                if event.type == pygame.QUIT: 
+                    pygame.quit()
+                    sys.exit()
+
+            inputs = pygame.key.get_pressed()
+            if inputs[pygame.K_LEFT] and cursor.loc[0] > 0:
+                cursor.move(-1)
+            if inputs[pygame.K_RIGHT] and cursor.loc[0] < 425:
+                cursor.move(1)
+            
+            if not started:
+                yd = 3
+                xd = 0
+
+            if ball.loc[1] >= 397 and ball.loc[1] <= 403 and (ball.loc[0] >= cursor.loc[0] and ball.loc[0] <= (cursor.loc[0] + 75)):
+                started = True
+                yd = -3
+                xd = (37.5 - (ball.loc[0] - cursor.loc[0])) * -0.1
+            
+            if ball.loc[0] < 0 or ball.loc[0] > size[1]:
+                xd *= -1
+            
+            if ball.loc[1] < 0:
+                yd *= -1
+
+            for i in bricks:
+                if not bricks[i].destroy:
+                    #bottom
+                    if ball.loc[1] <= (bricks[i].loc[1] + bricks[i].loc[3]) and ball.loc[1] >= (bricks[i].loc[1] + (bricks[i].loc[3] - 3)):
+                        if ball.loc[0] >= bricks[i].loc[0] and ball.loc[0] <= (bricks[i].loc[0] + bricks[i].loc[2]):
+                            yd *= -1
+                            bricks[i].destroyBrick()
+                    #top
+                    elif ball.loc[1] >= bricks[i].loc[1] and ball.loc[1] <= (bricks[i].loc[3] + 3):
+                        if ball.loc[0] >= bricks[i].loc[0] and ball.loc[0] <= (bricks[i].loc[0] + bricks[i].loc[2]):
+                            yd *= -1
+                            bricks[i].destroyBrick()
+                    #left
+                    elif ball.loc[0] >= bricks[i].loc[0] and ball.loc[0] <= (bricks[i].loc[0] + 10):
+                        if ball.loc[1] >= bricks[i].loc[1] and ball.loc[1] <= (bricks[i].loc[1] + bricks[i].loc[3]):
+                            xd *= -1
+                            bricks[i].destroyBrick()
+                    #right
+                    elif ball.loc[0] <= (bricks[i].loc[0] + bricks[i].loc[2]) and ball.loc[0] >= (bricks[i].loc[0] + (bricks[i].loc[2] - 10)):
+                        if ball.loc[1] >= bricks[i].loc[1] and ball.loc[1] <= (bricks[i].loc[1] + bricks[i].loc[3]):
+                            xd *= -1
+                            bricks[i].destroyBrick()
+
+
+            ball.move(xd,yd)
+
+            screen.fill((0,0,0))
+            cursor.draw(screen)
+            ball.draw(screen)
+            for i in bricks:
+                if not bricks[i].destroy:
+                    bricks[i].draw(screen)
+
+            pygame.display.flip()
     while True:
-        pygame.time.wait(33)
-
-        for event in pygame.event.get(): 
-            if event.type == pygame.QUIT: 
-                pygame.quit()
-                sys.exit()
-
-        inputs = pygame.key.get_pressed()
-        if inputs[pygame.K_LEFT] and cursor.loc[0] > 0:
-            cursor.move(-1)
-        if inputs[pygame.K_RIGHT] and cursor.loc[0] < 425:
-            cursor.move(1)
-        
-        if not started:
-            ball.move(0,3)
-
-        if ball.loc[1] == 400 and abs(ball.loc[0] - cursor.loc[0]) <= 
-
-        screen.fill((0,0,0))
-        cursor.draw(screen)
-        ball.draw(screen)
-        for i in bricks:
-            if not bricks[i].destroy:
-                bricks[i].draw(screen)
-
-        pygame.display.flip()
+        gameLoop()
         
