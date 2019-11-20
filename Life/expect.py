@@ -56,7 +56,7 @@ def plotdata(state, county):
     plt.ylabel("Life Expectancy (Years)")
     plt.grid(True)
     plt.legend()
-    plt.savefig(fname=f"Life/{state}_{county}.png")
+    plt.savefig(fname=(f"Life/{state}_{county}.png").replace(" ",""))
     pass
 
 
