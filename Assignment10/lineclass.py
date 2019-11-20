@@ -7,7 +7,6 @@ plt.gca().set_prop_cycle('color', ['red', 'green', 'blue', 'black'])
 class MyLine:
 
     def __init__(self, *args, **kwargs):
-        # TODO: IMPLEMENT FUNCTION
         if kwargs["options"] == "2pts":
             self.slope = (args[1][1] - args[0][1]) / (args[1][0] - args[0][0])
             self.intercept = args[0][1] - (self.slope * args[0][0])
@@ -32,8 +31,11 @@ class MyLine:
         return self.get_line()
 
     def __mul__(self,other):
-        # TODO: IMPLEMENT FUNCTION
-        pass
+        if self.slope == other.slope:
+            return ()
+        else:
+            x = (other.intercept - self.intercept) / (self.slope - other.slope)
+            return (x, self.line(x))
 
 
 if __name__ == "__main__":
