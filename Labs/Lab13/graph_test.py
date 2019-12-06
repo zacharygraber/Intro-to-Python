@@ -17,7 +17,7 @@ TEST_CASES_BIGRAPH = [[1, [2, 6]], [2, [1, 3]], [3, [2, 4]], [4, [3, 6]], [5, []
 ###############################################################################
 # Complete the tasks using the Graph Class (Directional)
 print("" + "="*30 + " Directional Graph " + "="*30 + "")
-print("Comment out this print statement ONCE the error is fixed  (Error below) ")
+# print("Comment out this print statement ONCE the error is fixed  (Error below) ")
 g = Graph(nodes, True) # TODO: Should be a directional graph
 
 # Adds all the edges to the graph
@@ -45,7 +45,7 @@ print(g)
 ###############################################################################
 # Complete the tasks using the Graph Class (Undirected graph)
 print("\n" + "" + "="*35 + " Undirected " + "="*35 + "")
-print("Comment out this print statement ONCE the error is fixed  (Error below) ")
+# print("Comment out this print statement ONCE the error is fixed  (Error below) ")
 g = Graph(nodes, False) # Should be a undirected graph
 
 # Adds all the edges to the graph

@@ -25,15 +25,19 @@ class Graph:
         """
         Returns a list of all nodes attached to the node provided
         """
-        # FIXME: What happens if the node is not in the graph?
-        return self.edges[node]
+        if node in self.nodes:
+            return self.edges[node]
+        else:
+            return []
     
     def dettachedNodes(self):
         """
         Returns a list of nodes have no edges
         """
-        # TODO: Implement this to search the graph to find nodes with no edges
-        return []
+        if not self.directed:
+            return [i for i in self.nodes if not self.edges[i]]
+        else:
+            return [i for i in self.nodes if (not self.edges[i] or not [j for j in self.edges if i in self.edges[j]])]
         # CHALLENGE: Can you make it for a directional graph to return nodes that have no edges COMING IN and leaving
     
     def __str__(self):
