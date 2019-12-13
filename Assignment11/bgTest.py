@@ -48,8 +48,6 @@ def main():
             print("Adding edges " + str(toAdd) + " should have returned " + str(-1 * result) + ". Returned " + str(result))
     print("=" * 10 + "\n")
 
-    # FIXME: This does not test if you delete nodes and edges correctly. If you want to ensure it works, you need to write your own tests (not required for points, but we will test ourselves)
-
 
 if __name__ == "__main__":
         main()
