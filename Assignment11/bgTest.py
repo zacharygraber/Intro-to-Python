@@ -48,6 +48,9 @@ def main():
             print("Adding edges " + str(toAdd) + " should have returned " + str(-1 * result) + ". Returned " + str(result))
     print("=" * 10 + "\n")
 
+    print(g.edges)
+    print(g.reachable((1,6)))
+
 
 if __name__ == "__main__":
         main()
