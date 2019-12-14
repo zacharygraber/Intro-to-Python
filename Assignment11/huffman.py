@@ -7,9 +7,29 @@ def make_code(xlst,code):
 
 #INPUT list of word, count pairs
 #OUTPUT huffman tree with a single node
-#[node [0 or 1 [node]]]
+#[node, [0 or 1, [node]]]
 def make_tree(xlst):
-#TO DO: IMPLEMENT FUNCTION
+    #INPUT a list
+    #RETURN a tuple with the two smallest values
+    def twoMins(xlst):
+        tempList = xlst
+        min1 = xlst[0]
+        min2 = xlst[1]
+        for i in tempList:
+            if i < min1:
+                min1 = i
+        tempList.remove(min1)
+        for i in tempList:
+            if i < min2:
+                min2 = i
+        return (min1, min2)
+
+    while len(xlst > 1):
+        x,y = twoMins([i[1] for i in xlst])
+        node = x+y
+        
+
+
 
 ###DATA
 xlst = [['w',7],['u',12],['x',15],['v',18],['y',20]]
