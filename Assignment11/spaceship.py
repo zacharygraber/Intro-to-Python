@@ -26,10 +26,11 @@ pixelArray = pygame.PixelArray(screen)
 
 for x in range(size[0]):
     for y in range(size[1]):
-        if mandelbrot((-2 + (x / 300),-1 + (y / 300)),60) != -1:
-            pixelArray[x,y] = (255,255,255)
-        else:
+        m = mandelbrot((-2 + (x / 300),-1 + (y / 300)),60)
+        if m == -1:
             pixelArray[x,y] = (0,0,0)
+        else:
+            pixelArray[x,y] = (m * 4,m * 4,255)
 
 while True:
     for event in pygame.event.get():
