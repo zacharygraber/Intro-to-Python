@@ -12,7 +12,7 @@ c.executemany('INSERT INTO G VALUES (?,?)', r)
 dog.commit()
 
 
-q = lambda x,y: f"SELECT Parent text FROM G WHERE (SELECT Parent text FROM G WHERE Child = '{x}') = (SELECT Parent text FROM G WHERE Child = '{y}')"
+q = lambda x,y: f"SELECT Parent text FROM G WHERE Child = '{x}' and (SELECT Parent text FROM G WHERE Child = '{x}') = (SELECT Parent text FROM G WHERE Child = '{x}')"
 
 print(c.execute(q('b','e')).fetchone())
 print(c.execute(q('h','g')).fetchone())
